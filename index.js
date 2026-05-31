@@ -8,8 +8,8 @@ const cors = require("cors");
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const { ObjectId } = require("mongodb");
-const { createRemoteJWKSet } = require("jose-cjs");
-const { jwtVerify } = require("jose");
+const { createRemoteJWKSet, jwtVerify } = require("jose-cjs");
+// const { jwtVerify } = require("jose");
 
 dotenv.config();
 // app.use(
@@ -449,6 +449,6 @@ app.get("/", (req, res) => {
   res.send("Mediqueue Server Running");
 });
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
