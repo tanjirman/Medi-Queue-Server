@@ -12,13 +12,14 @@ const { createRemoteJWKSet } = require("jose-cjs");
 const { jwtVerify } = require("jose");
 
 dotenv.config();
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  }),
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     credentials: true,
+//   }),
+// );
 app.use(express.json());
+app.use(cors())
 
 const uri = process.env.MONGODB_URI;
 
